@@ -1,8 +1,11 @@
 import express from "express";
 import "dotenv/config";
 import { MongoClient } from "mongodb";
+import cors from "cors";
 
 const app = express();
+app.use(express.json());
+app.use(cors());
 const port = 3200;
 app.listen(port);
 
@@ -49,6 +52,7 @@ app.get("/getBounds", async (req, res) => {
   try {
     console.log(req.query);
     const result = await queryDatabase(req.query);
+    console.log(result);
     await res.send(result);
   } catch (error) {
     console.log(error);

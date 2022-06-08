@@ -2,11 +2,11 @@ version: '3.4'
 
 services:
   tflcamsmapsapi:
-    image: tflcamsmapsapi
     build:
       context: .
       dockerfile: ./Dockerfile
+    image: tfl_cams_maps_api:latest
     environment:
-      NODE_ENV: development
+      NODE_ENV: production
     volumes:
       - ./.env:/usr/src/app/.env

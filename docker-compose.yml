@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    image: tfl_cams_maps_api:latest
+    image: f4zphp27xi2s27yn/my_repo_topor:tflcamsmapsapi
     environment:
       NODE_ENV: production
     volumes:
